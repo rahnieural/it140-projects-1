@@ -10,11 +10,8 @@ Cyberpunk Data Heist ("Project: Neon Breach")
 
 You are an elite netrunner trapped inside a rogue corporate mega-facility. Your primary objective is to hack and download six vital data fragments from secure terminals scattered across the facility. Once all six data fragments are secured, you can breach the mainframe and escape. However, the facility's rogue AI security sentinel is actively patrolling the mainframe core. If you stumble into the Core Chamber before downloading all six items, the AI will lock down the network and you will be captured.
 
-### Rooms (8 Rooms Required)
 
 ## Rooms
-
-Project One requires a minimum of eight rooms.
 
 1. **Server Lobby** (Start room — no items)
 2. **Research Lab** 
@@ -29,9 +26,6 @@ Project One requires a minimum of eight rooms.
 
 ## Items
 
-With the minimum eight-room design, Project One requires at least six items.
-Every room except the start room and villain room must contain one item.
-
 1. Quantum Drive (Located in Research Lab)
 2. Power Core (Located in Engineering Bay)
 3. Access Card (Located in Security Checkpoint)
@@ -39,8 +33,6 @@ Every room except the start room and villain room must contain one item.
 5. Neural Link (Located in Data Archives)
 6. Holo-Projector (Located in Maintenance Tunnel)
 
-If you add rooms beyond the minimum, add an item for every additional room
-except the start room and villain room.
 
 ## Villain
 
