@@ -23,3 +23,35 @@
 
 # TODO 6: Show how movement fits into repeated gameplay.
 # The final game continues accepting commands until a required ending occurs.
+
+# Move Pseudocode for Text-Based Game
+# Handles navigation between rooms (north, south, east, west)
+
+WHILE game_is_running:
+    # Display current location
+    PRINT "You are in:", current_room
+    
+    # Prompt player for movement command
+    PRINT "Enter movement direction (north, south, east, west) or 'exit' to quit:"
+    INPUT player_command
+    
+    # Convert input to lowercase for consistent validation
+    SET command = LOWERCASE(player_command)
+    
+    IF command == "exit":
+        PRINT "Exiting game. Goodbye!"
+        SET game_is_running = FALSE
+        
+    ELSE IF command IN ["north", "south", "east", "west"]:
+        # Check if a room exists in that direction from the current room
+        IF current_room has a valid exit in direction command:
+            SET current_room = room connected in that direction
+            PRINT "You move", command
+        ELSE:
+            PRINT "You cannot go that way. Path is blocked or nonexistent."
+            
+    ELSE:
+        # Input validation error message for invalid commands
+        PRINT "Invalid command. Please enter north, south, east, or west."
+    END IF
+END WHILE

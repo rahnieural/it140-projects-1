@@ -7,25 +7,26 @@
 
 **Theme:**
 
-TODO: Name and briefly describe your game's theme.
+Cyberpunk Data Heist ("Project: Neon Breach")
 
 **Storyline:**
 
-TODO: In one short paragraph, explain the setting, the player's goal, the items
-the player must gather, and the threat created by the villain.
+You are an elite netrunner trapped inside a rogue corporate mega-facility. Your primary objective is to hack and download six vital data fragments from secure terminals scattered across the facility. Once all six data fragments are secured, you can breach the mainframe and escape. However, the facility's rogue AI security sentinel is actively patrolling the mainframe core. If you stumble into the Core Chamber before downloading all six items, the AI will lock down the network and you will be captured.
+
+### Rooms (8 Rooms Required)
 
 ## Rooms
 
 Project One requires a minimum of eight rooms.
 
-1. TODO: Start room
-2. TODO: Room
-3. TODO: Room
-4. TODO: Room
-5. TODO: Room
-6. TODO: Room
-7. TODO: Room
-8. TODO: Villain room
+1. **Server Lobby** (Start room — no items)
+2. **Research Lab** 
+3. **Engineering Bay** 
+4. **Security Checkpoint** 
+5. **Executive Lounge** 
+6. **Data Archives** 
+7. **Maintenance Tunnel** 
+8. **Main Core Chamber** (Villain room — no items)
 
 Add more rooms if your design needs them.
 
@@ -34,19 +35,19 @@ Add more rooms if your design needs them.
 With the minimum eight-room design, Project One requires at least six items.
 Every room except the start room and villain room must contain one item.
 
-1. TODO: Item
-2. TODO: Item
-3. TODO: Item
-4. TODO: Item
-5. TODO: Item
-6. TODO: Item
+1. Quantum Drive (Located in Research Lab)
+2. Power Core (Located in Engineering Bay)
+3. Access Card (Located in Security Checkpoint)
+4. Encryption Key (Located in Executive Lounge)
+5. Neural Link (Located in Data Archives)
+6. Holo-Projector (Located in Maintenance Tunnel)
 
 If you add rooms beyond the minimum, add an item for every additional room
 except the start room and villain room.
 
 ## Villain
 
-TODO: Identify and briefly describe the villain.
+* **AI Sentinel:** A rogue security artificial intelligence guarding the Main Core Chamber. Encountering it before collecting all 6 items results in game over.
 
 ## Storyboard and Map Check
 

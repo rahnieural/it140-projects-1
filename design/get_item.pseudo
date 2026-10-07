@@ -7,26 +7,47 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, SET, ADD, or similar terms.
 
-START get_item
+# Project One Get-Item Pseudocode
+# Graded checkpoint: Module Five Project One
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
-
-    # TODO 2: Prompt for and receive the player's get-item command.
-
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
-
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
-
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
-
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
-
-END get_item
+WHILE game_is_running:
+    # Prompt player for action / item pickup
+    OUTPUT "Enter command (e.g., 'get [item name]') or type 'skip':"
+    INPUT player_command
+    
+    SET command_parts = SPLIT(player_command)
+    
+    IF command_parts[0] == "get":
+        # Validate if the player specified an item name
+        IF LENGTH(command_parts) > 1:
+            SET target_item = command_parts[1]
+            
+            # Check if the room contains an item and if it matches the target item
+            IF current_room contains an item AND item_in_room == target_item:
+                ADD target_item to player_inventory
+                REMOVE target_item from current_room
+                OUTPUT "You have successfully collected:", target_item
+                
+                # Check win condition
+                IF LENGTH(player_inventory) == 6:
+                    OUTPUT "Congratulations! You collected all items and breached the mainframe. You win!"
+                    SET game_is_running = FALSE
+                END IF
+                
+            ELSE:
+                OUTPUT "That item is not in this room."
+            END IF
+        ELSE:
+            OUTPUT "Please specify what item you want to get (e.g., get Quantum Drive)."
+        END IF
+        
+    ELSE IF command_parts[0] == "skip":
+        OUTPUT "Moving on..."
+        
+    ELSE:
+        OUTPUT "Invalid action command. Use 'get [item name]'."
+    END IF
+END WHILE
 
 
 # References
