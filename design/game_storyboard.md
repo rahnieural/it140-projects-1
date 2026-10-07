@@ -28,7 +28,7 @@ Project One requires a minimum of eight rooms.
 7. **Maintenance Tunnel** 
 8. **Main Core Chamber** (Villain room — no items)
 
-Add more rooms if your design needs them.
+
 
 ## Items
 
