@@ -1,8 +1,5 @@
 # Project One Storyboard | Text-Based Adventure Game
 
-> Complete the `TODO:` prompts using your own game idea. This file is a graded
-> Project One deliverable and later becomes a reference for Project Two.
-
 ## Theme and Storyline
 
 **Theme:**
