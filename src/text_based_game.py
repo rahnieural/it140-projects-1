@@ -14,6 +14,8 @@ def show_instructions():
 def show_status(current_room, inventory, rooms):
     print(f"\nYou are in the {current_room}")
     print(f"Inventory: {inventory}")
+
+    # Check if the current room contains an item and if the player hasn't picked it up yet
     if "item" in rooms[current_room]:
         item = rooms[current_room]["item"]
         if item not in inventory:
@@ -22,6 +24,7 @@ def show_status(current_room, inventory, rooms):
 
 
 def main():
+    # Dictionary linking rooms to directions and assigning one item per room
     rooms = {
         'Great Hall': {
             'South': 'Bedroom',
@@ -58,19 +61,24 @@ def main():
         },
         'Dining Room': {
             'West': 'Kitchen',
-            'item': 'Dragon'
+            'item': 'Dragon' # Villain room
         }
     }
 
+    # Initialize starting game variables
     current_room = 'Great Hall'
     inventory = []
     total_items_needed = 6
-
+    
+    # Display initial instructions
     show_instructions()
 
+    # Core gameplay loop
     while True:
+        # Display current status at the start of each turn
         show_status(current_room, inventory, rooms)
 
+        # Check for villain / end game condition upon entering room
         if "item" in rooms[current_room] and rooms[current_room]["item"] == 'Dragon':
             if len(inventory) == total_items_needed:
                 print("\nCongratulations! You have collected all items and defeated the dragon!")
@@ -79,20 +87,25 @@ def main():
                 print("\nNOM NOM...GAME OVER!")
                 print("You entered the Dragon's lair without all 6 items!")
                 print("Thanks for playing the game. Hope you enjoyed it.")
-            break
+            break # Exit game loop on win or loss
 
+        # Prompt player for move input
         user_input = input("Enter your move: ").strip().split()
 
+        # Input validation for empty input
         if not user_input:
             print("Invalid command! Please try again.")
             continue
 
+        # Extract primary command word
         command = user_input[0].lower()
 
+        # Handle exit command
         if command == 'exit':
             print("Thanks for playing!")
             break
 
+        # Handle movement command ('go')
         elif command == 'go':
             if len(user_input) < 2:
                 print("Go where? Please specify a direction (e.g., 'go North').")
@@ -100,18 +113,22 @@ def main():
 
             direction = user_input[1].capitalize()
 
+            # Check if valid direction exists for current room
             if direction in rooms[current_room]:
                 current_room = rooms[current_room][direction]
             else:
                 print("You can't go that way!")
 
+        # Handle item collection command ('get')
         elif command == 'get':
             if len(user_input) < 2:
                 print("Get what? Please specify an item (e.g., 'get Armor').")
                 continue
 
+            # Join remaining input tokens in case of multi-word items
             target_item = " ".join(user_input[1:]).title()
 
+            # Validate item existence in current room
             if "item" in rooms[current_room] and rooms[current_room]["item"].lower() == target_item.lower():
                 actual_item = rooms[current_room]["item"]
                 if actual_item not in inventory:
@@ -122,9 +139,10 @@ def main():
             else:
                 print(f"Can't get {target_item}!")
 
+        # Handle invalid action command
         else:
             print("Invalid command! Valid commands are 'go [direction]' or 'get [item]'.")
 
-
+# Run main function when executed
 if __name__ == "__main__":
     main()
